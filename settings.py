@@ -12,5 +12,7 @@ class Settings:
 
         self.bubble_min_r = 16
         self.bubble_max_r = 50
+        self.bubble_speed = 1
+        self.speed_increment = 1
 
         self.bonus_score = 1000

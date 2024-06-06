@@ -33,7 +33,11 @@ class Bubble(pygame.sprite.Sprite):
                     random.randint(0, game_settings.screen_height),
                 )
             )
-        self.speed = random.randint(1, 5)
+        # Store the bubble's position as a decimal value.
+        self.y = float(self.rect.y)
+
+        # Bubble speed
+        self.speed = game_settings.bubble_speed
 
     def update(self):
         self.rect.move_ip(-self.speed, 0)

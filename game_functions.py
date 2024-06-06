@@ -57,6 +57,8 @@ def update_bubbles(player, bubbles, stats, sb, game_settings):
             stats.level += 1
             sb.prepare_level()
             stats.bonus += 1
+            # Increase bubble speed
+            game_settings.bubble_speed += game_settings.speed_increment
         hitted_bubble.kill()
 
 def update_screen(game_settings, screen, player, bubbles, clock, stats, play_button, sb):
