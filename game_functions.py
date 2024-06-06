@@ -1,5 +1,7 @@
 import sys
 import pygame
+from scoreboard import Scoreboard
+from game_stats import GameStats
 from bubble import Bubble
 
 
@@ -13,6 +15,7 @@ def check_events(game_settings, screen, player, bubbles, stats, play_button):
     """Check keyboard events"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            save_score(stats)
             sys.exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
@@ -76,6 +79,10 @@ def update_screen(game_settings, screen, player, bubbles, clock, stats, play_but
     clock.tick(30)
     # display play button
     if not stats.game_active:
+        sb.draw(stats)
         play_button.draw_button()
     # display the last screen
     pygame.display.flip()
+
+def save_score(stats):
+    stats.highscore_update(stats.score)

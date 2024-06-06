@@ -1,8 +1,5 @@
 import pygame. font
 
-
-import pygame.font
-
 class Button:
     def __init__(self, gm_settings, screen, msg):
         """Initialize button attributes."""
